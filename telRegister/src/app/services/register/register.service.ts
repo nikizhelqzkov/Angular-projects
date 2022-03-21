@@ -8,7 +8,9 @@ import { observable, Observable, of } from 'rxjs';
 export class RegisterService {
   constructor() {}
   getList(): Observable<any> {
-    return of(this.DATA);
+    return of(
+      this.DATA
+    );
   }
   getDetail(id: any): Observable<any> {
     return of(
@@ -16,6 +18,9 @@ export class RegisterService {
         return data.id == id;
       })
     );
+  }
+  addRegister(data: any) {
+    this.DATA.push(data);
   }
   DATA = [
     {

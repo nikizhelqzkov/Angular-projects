@@ -9,7 +9,7 @@ import { RegisterService } from '../../services/register/register.service';
 })
 export class RegisterListComponent implements OnInit {
   public list: any;
-  constructor(private regService: RegisterService) {}
+  constructor(private route: ActivatedRoute,private regService: RegisterService) {}
 
   ngOnInit(): void {
     this.getRegisterList();
@@ -18,5 +18,8 @@ export class RegisterListComponent implements OnInit {
     this.regService.getList().subscribe((data) => {
       this.list = data;
     });
+  }
+  newRegister(){
+
   }
 }
