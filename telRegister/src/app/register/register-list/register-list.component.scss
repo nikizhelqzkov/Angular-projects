@@ -1,0 +1,28 @@
+.header{
+  &__title{
+    text-align: center;
+    font-size:25px;
+
+  }
+}
+.table{
+  width: 100%;
+  border: 1px solid #000;
+  border-collapse: collapse;
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+  td,th{
+    border: 1px solid #000;
+  }
+  th{
+    background-color:#f3e1bd;
+  }
+  &__age{
+    text-align: center;
+  }
+  &__name{
+    padding-left:10px;
+  }
+
+}
