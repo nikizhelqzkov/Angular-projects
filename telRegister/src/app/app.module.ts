@@ -9,6 +9,7 @@ import { RegisterService } from './services/register/register.service';
 import { RegisterDetailsComponent } from './register/register-details/register-details.component';
 import { NewRegisterComponent } from './register/new-register/new-register.component';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [RegisterService],
   bootstrap: [AppComponent]

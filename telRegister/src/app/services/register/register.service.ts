@@ -23,7 +23,10 @@ export class RegisterService {
     );
   }
   addRegister(data: any): Observable<IContact[]> {
-    this.DATA.push(data);
+    const id = this.DATA.length;
+    const newData = data;
+    newData.id = id;
+    this.DATA.push(newData);
     return this.getList();
   }
   removeRegister(id: number): Observable<IContact[]> {
