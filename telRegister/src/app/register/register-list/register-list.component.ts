@@ -20,7 +20,6 @@ export class RegisterListComponent implements OnInit {
     });
   }
   newRegister() {
-    console.log('test');
     this.route.navigate(['register/add']);
   }
   removeRegister(id: number) {

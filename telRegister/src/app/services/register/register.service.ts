@@ -23,7 +23,8 @@ export class RegisterService {
     );
   }
   addRegister(data: any): Observable<IContact[]> {
-    const id = this.DATA.length;
+    const idList = this.DATA.map((data) => data.id);
+    const id = Math.max(...idList)+1;
     const newData = data;
     newData.id = id;
     this.DATA.push(newData);
@@ -36,7 +37,7 @@ export class RegisterService {
       }))
     );
   }
-  DATA:IContact[] = [
+  DATA: IContact[] = [
     {
       id: 0,
       name: 'John Ivanov',

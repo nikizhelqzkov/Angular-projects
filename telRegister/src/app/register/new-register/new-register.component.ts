@@ -11,7 +11,7 @@ export class NewRegisterComponent implements OnInit {
   public name: string = '';
   public age: number = 0;
   constructor(private route: Router, private regService: RegisterService) {}
-  pushData(data: any): any {
+  pushData(data: any): void {
     this.regService.addRegister(data).subscribe((result) => {
       console.log(result);
     });
