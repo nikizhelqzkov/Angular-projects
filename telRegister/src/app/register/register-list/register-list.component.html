@@ -2,19 +2,17 @@
   <h2 class="header__title">List of the Telephone contacts</h2>
 </header>
 
-<table class="table">
+<table class="t table">
   <tr>
-    <th>Name</th>
-    <th>Age</th>
-    <th>More</th>
-    <th colspan="2"class="table__add" (click)="newRegister()">➕</th>
+    <th class="col-4">Name</th>
+    <th class="col">Details</th>
+    <th class=" col t__add" (click)="newRegister()">➕</th>
   </tr>
   <tr *ngFor="let item of list">
-    <td class="table__name">{{ item.name }}</td>
-    <td class="table__age">{{ item.age }}</td>
-    <td class="table__more" colspan="2">
-      <a [routerLink]="['./details/', item.id]">More</a>
+    <td class="col-4 t__name ">{{ item.name }}</td>
+    <td class="col t__more ">
+      <a [routerLink]="['./details/', item.id]">ℹ</a>
     </td>
-    <td class="table__remove" (click)="removeRegister(item.id)" colspan="2">❌</td>
+    <td class="col t__remove " (click)="removeRegister(item.id)">❌</td>
   </tr>
 </table>

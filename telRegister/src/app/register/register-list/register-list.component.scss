@@ -1,32 +1,30 @@
-.header{
-  &__title{
+.header {
+  &__title {
     text-align: center;
-    font-size:25px;
-
+    font-size: 25px;
   }
 }
-.table{
-  width: 100%;
+.t {
+  width: 95%;
+  margin:2rem auto;
   border: 1px solid #000;
-  border-collapse: collapse;
   tr:nth-child(even) {
     background-color: #dddddd;
   }
-  td,th{
-    border: 1px solid #000;
-  }
-  th{
-    background-color:#f3e1bd;
-  }
-  &__age{
+  th {
+    background-color: #f3e1bd;
     text-align: center;
   }
-  &__name{
-    padding-left:10px;
-  }
-  &__remove,&__add{
+  td {
     text-align: center;
-    cursor: pointer;
   }
 
+
+  &__remove,
+  &__add {
+    cursor: pointer;
+    &:hover {
+      background-color: #a8fd81 !important;
+    }
+  }
 }
