@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { RegisterService } from './services/register/register.service';
 import { RegisterDetailsComponent } from './register/register-details/register-details.component';
 import { NewRegisterComponent } from './register/new-register/new-register.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [

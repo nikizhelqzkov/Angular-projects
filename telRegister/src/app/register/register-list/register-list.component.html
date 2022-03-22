@@ -7,14 +7,14 @@
     <th>Name</th>
     <th>Age</th>
     <th>More</th>
-    <th><a [routerLink]="['./add']">➕</a></th>
-    <th>➖</th>
+    <th colspan="2"class="table__add" (click)="newRegister()">➕</th>
   </tr>
   <tr *ngFor="let item of list">
     <td class="table__name">{{ item.name }}</td>
     <td class="table__age">{{ item.age }}</td>
-    <td class="table__more" colspan="3">
+    <td class="table__more" colspan="2">
       <a [routerLink]="['./details/', item.id]">More</a>
     </td>
+    <td class="table__remove" (click)="removeRegister(item.id)" colspan="2">❌</td>
   </tr>
 </table>

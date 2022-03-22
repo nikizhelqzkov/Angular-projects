@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Route } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 import { RegisterService } from '../../services/register/register.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { RegisterService } from '../../services/register/register.service';
 })
 export class RegisterListComponent implements OnInit {
   public list: any;
-  constructor(private route: ActivatedRoute,private regService: RegisterService) {}
+  constructor(public route: Router, private regService: RegisterService) {}
 
   ngOnInit(): void {
     this.getRegisterList();
@@ -19,7 +19,13 @@ export class RegisterListComponent implements OnInit {
       this.list = data;
     });
   }
-  newRegister(){
-
+  newRegister() {
+    console.log('test');
+    this.route.navigate(['register/add']);
+  }
+  removeRegister(id: number) {
+    this.regService.removeRegister(id).subscribe((response:any) => {
+      this.list = response;
+    });
   }
 }

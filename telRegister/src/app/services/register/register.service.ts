@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { observable, Observable, of } from 'rxjs';
+import { IContact } from 'src/app/interfaces/Icontact';
 
 @Injectable()
 // {
@@ -9,7 +10,9 @@ export class RegisterService {
   constructor() {}
   getList(): Observable<any> {
     return of(
-      this.DATA
+      this.DATA.sort((r1, r2): any => {
+        return r1.name > r2.name;
+      })
     );
   }
   getDetail(id: any): Observable<any> {
@@ -19,23 +22,31 @@ export class RegisterService {
       })
     );
   }
-  addRegister(data: any) {
+  addRegister(data: any): Observable<IContact[]> {
     this.DATA.push(data);
+    return this.getList();
   }
-  DATA = [
+  removeRegister(id: number): Observable<IContact[]> {
+    return of(
+      (this.DATA = this.DATA.filter((reg): any => {
+        return reg.id != id;
+      }))
+    );
+  }
+  DATA:IContact[] = [
     {
       id: 0,
-      name: 'John',
+      name: 'John Ivanov',
       age: 34,
     },
     {
       id: 1,
-      name: 'John2',
+      name: 'Pencho',
       age: 35,
     },
     {
       id: 2,
-      name: 'John4',
+      name: 'Milka',
       age: 14,
     },
     {
@@ -45,7 +56,7 @@ export class RegisterService {
     },
     {
       id: 4,
-      name: 'John',
+      name: 'John Georgiev',
       age: 34,
     },
   ];
