@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { observable, Observable, of } from 'rxjs';
-import { IContact } from 'src/app/interfaces/Icontact';
+import { IContact } from 'src/app/interfaces/IContact/Icontact';
 
 @Injectable()
 // {
@@ -11,7 +11,9 @@ export class RegisterService {
   getList(): Observable<any> {
     return of(
       this.DATA.sort((r1, r2): any => {
-        return r1.name > r2.name;
+        return r1.passportData.firstName === r2.passportData.firstName
+          ? r1.passportData.lastName > r2.passportData.lastName
+          : r1.passportData.firstName > r2.passportData.firstName;
       })
     );
   }
@@ -24,10 +26,14 @@ export class RegisterService {
   }
   addRegister(data: any): Observable<IContact[]> {
     const idList = this.DATA.map((data) => data.id);
-    const id = Math.max(...idList)+1;
-    const newData = data;
+    const id = idList.length === 0 ? 0 : Math.max(...idList) + 1;
+    const newData = data.passportData;
     newData.id = id;
-    this.DATA.push(newData);
+    const result = {
+      id,
+      passportData: newData,
+    };
+    this.DATA.push(result);
     return this.getList();
   }
   removeRegister(id: number): Observable<IContact[]> {
@@ -40,28 +46,27 @@ export class RegisterService {
   DATA: IContact[] = [
     {
       id: 0,
-      name: 'John Ivanov',
-      age: 34,
+      telephone: '08986259453',
+      passportData: {
+        firstName: 'Aleksandar',
+        lastName: 'Ivanov',
+      },
+      address: {
+        country: 'Bulgaria',
+        city: 'Shumen',
+      },
     },
     {
       id: 1,
-      name: 'Pencho',
-      age: 35,
-    },
-    {
-      id: 2,
-      name: 'Milka',
-      age: 14,
-    },
-    {
-      id: 3,
-      name: 'Ivan',
-      age: 16,
-    },
-    {
-      id: 4,
-      name: 'John Georgiev',
-      age: 34,
+      telephone: '0884284325',
+      passportData: {
+        firstName: 'Borislav',
+        lastName: 'Mihailov',
+      },
+      address: {
+        country: 'Bulgaria',
+        city: 'Sofia',
+      },
     },
   ];
 }

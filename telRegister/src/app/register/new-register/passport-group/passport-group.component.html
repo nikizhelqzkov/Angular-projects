@@ -1,0 +1,24 @@
+<ng-container [formGroup]="passportForm">
+  <div class="mb-3">
+    <label for="firstName" class="form-label">First Name</label>
+    <input
+      formControlName="firstName"
+      type="text"
+      name="firstName"
+      class="form-control"
+      id="firstName"
+      placeholder="Your first name..."
+    />
+  </div>
+  <div class="mb-3">
+    <label for="lastName" class="form-label">Last Name</label>
+    <input
+      formControlName="lastName"
+      type="text"
+      name="lastName"
+      class="form-control"
+      id="name"
+      placeholder="Your last name..."
+    />
+  </div>
+</ng-container>

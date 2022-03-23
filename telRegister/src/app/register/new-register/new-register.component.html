@@ -3,22 +3,53 @@
 </header>
 
 <form
+  [formGroup]="registerForm"
+  (ngSubmit)="pushData(registerForm.value)"
+  class="registerForm"
+>
+  <passport-group formGroupName="passportData"></passport-group>
+  <button type="submit" class="btn btn-primary">Register</button>
+</form>
+
+<!-- <form
   #registerNew="ngForm"
   (ngSubmit)="pushData(registerNew.value)"
   class="registerForm"
->
-  <div class="mb-3">
-    <label for="name" class="form-label">Name</label>
+> -->
+<!-- <div class="mb-3">
+    <label for="firstName" class="form-label">First Name</label>
     <input
-      [(ngModel)]="name"
+      [(ngModel)]="passportData.firstName"
       type="text"
-      name="name"
+      name="firstName"
       class="form-control"
-      id="name"
-      placeholder="Your name..."
+      id="firstName"
+      placeholder="Your first name..."
     />
   </div>
   <div class="mb-3">
+    <label for="lastName" class="form-label">Last Name</label>
+    <input
+      [(ngModel)]="passportData.lastName"
+      type="text"
+      name="lastName"
+      class="form-control"
+      id="name"
+      placeholder="Your last name..."
+    />
+  </div>
+  <div class="mb-3">
+    <label for="tel" class="form-label">Telephone</label>
+    <input
+      [(ngModel)]="tel"
+      type="tel"
+      name="tel"
+      class="form-control"
+      id="tel"
+      placeholder="Your phone number..."
+    />
+  </div> -->
+<!-- <div class="mb-3">
     <label for="age" class="form-label">Age</label>
     <input
       type="number"
@@ -28,6 +59,4 @@
       id="age"
       placeholder="Your age..."
     />
-  </div>
-  <button type="submit" class="btn btn-primary">Register</button>
-</form>
+  </div> -->

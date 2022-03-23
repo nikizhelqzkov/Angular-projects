@@ -9,7 +9,8 @@ import { RegisterService } from './services/register/register.service';
 import { RegisterDetailsComponent } from './register/register-details/register-details.component';
 import { NewRegisterComponent } from './register/new-register/new-register.component';
 import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PassportGroupComponent } from './register/new-register/passport-group/passport-group.component';
 
 @NgModule({
   declarations: [
@@ -17,12 +18,14 @@ import { FormsModule } from '@angular/forms';
     RegisterListComponent,
     HomeComponent,
     RegisterDetailsComponent,
-    NewRegisterComponent
+    NewRegisterComponent,
+    PassportGroupComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [RegisterService],
   bootstrap: [AppComponent]
