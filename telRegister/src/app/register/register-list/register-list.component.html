@@ -5,14 +5,23 @@
 <table class="t table">
   <tr>
     <th class="col-4">Name</th>
+    <th class="col-4">Birthday</th>
     <th class="col">Details</th>
-    <th class=" col t__add" (click)="newRegister()">➕</th>
+    <th class="col t__add" (click)="newRegister()">➕</th>
   </tr>
-  <tr *ngFor="let item of list">
-    <td class="col-4 t__name ">{{ item.passportData.firstName}} {{ item.passportData.lastName}}</td>
-    <td class="col t__more ">
+  <tr *ngFor="let item of list"  [ngClass]="hasBirthday(item.passportData.dateOfBirth) ? 'birthday' : ''">
+    <td class="col-4 t__name">
+      {{ item.passportData.firstName }} {{ item.passportData.lastName }}
+    </td>
+    <td
+      class="col-4 t__birth"
+    >
+      {{ item.passportData.dateOfBirth | date }}
+      <span *ngIf="hasBirthday(item.passportData.dateOfBirth)">🎂</span>
+    </td>
+    <td class="col t__more">
       <a [routerLink]="['./details/', item.id]">ℹ</a>
     </td>
-    <td class="col t__remove " (click)="removeRegister(item.id)">❌</td>
+    <td class="col t__remove" (click)="removeRegister(item.id)">❌</td>
   </tr>
 </table>

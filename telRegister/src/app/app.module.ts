@@ -12,6 +12,9 @@ import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PassportGroupComponent } from './register/new-register/passport-group/passport-group.component';
 import { RegisterAddressComponent } from './register/new-register/register-address/register-address.component';
+import { PassportDetailsComponent } from './register/register-details/passport-details/passport-details.component';
+import { PhoneDetailsComponent } from './register/register-details/phone-details/phone-details.component';
+import { AddressDetailsComponent } from './register/register-details/address-details/address-details.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import { RegisterAddressComponent } from './register/new-register/register-addre
     RegisterDetailsComponent,
     NewRegisterComponent,
     PassportGroupComponent,
-    RegisterAddressComponent
+    RegisterAddressComponent,
+    PassportDetailsComponent,
+    PhoneDetailsComponent,
+    AddressDetailsComponent
   ],
   imports: [
     BrowserModule,

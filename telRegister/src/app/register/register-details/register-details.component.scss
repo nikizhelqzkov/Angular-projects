@@ -1,5 +1,14 @@
-.header{
-  &__title{
+.header {
+  &__title {
     text-align: center;
+  }
+}
+.content {
+  &__box {
+    max-width: 600px;
+    width: 100%;
+    background-color: #faf4e1;
+    margin: 1rem auto;
+    padding: 1rem;
   }
 }

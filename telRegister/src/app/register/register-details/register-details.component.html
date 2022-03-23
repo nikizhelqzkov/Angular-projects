@@ -1,14 +1,14 @@
 <header class="header">
   <div class="header__title">
-    <h2>Details for {{data.name}}</h2>
+    <h2>Details for {{ data.passportData.firstName }}</h2>
   </div>
 </header>
-<main class="content">
-<div class="content__name">
-  <h3>First Name: {{data.passportData.firstName}}</h3>
-  <h3>Last Name: {{data.passportData.lastName}}</h3>
-</div>
-<!-- <div class="content__age">
-  <h3>Age: {{data.age}}</h3>
-</div> -->
+<main class="content container">
+  <div class="content__box">
+    <phone-details [phoneNumber]="data.telephone"></phone-details>
+    <hr/>
+    <passport-details [info]="data.passportData"></passport-details>
+    <hr/>
+    <address-details [address]="data.address"></address-details>
+  </div>
 </main>

@@ -29,7 +29,6 @@ export class RegisterService {
     const id = idList.length === 0 ? 0 : Math.max(...idList) + 1;
     const passportData = data.passportData;
     const address = data.address;
-    debugger;
     const result:IContact = {
       id,
       telephone:data.telephone,
@@ -47,6 +46,8 @@ export class RegisterService {
       }))
     );
   }
+  private tempDate = new Date();
+
   DATA: IContact[] = [
     {
       id: 0,
@@ -54,6 +55,7 @@ export class RegisterService {
       passportData: {
         firstName: 'Aleksandar',
         lastName: 'Ivanov',
+        dateOfBirth:'2000-02-05'
       },
       address: {
         country: 'Bulgaria',
@@ -66,6 +68,7 @@ export class RegisterService {
       passportData: {
         firstName: 'Borislav',
         lastName: 'Mihailov',
+        dateOfBirth:'2002-03-05'
       },
       address: {
         country: 'Bulgaria',
