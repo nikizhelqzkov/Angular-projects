@@ -7,6 +7,17 @@
   (ngSubmit)="pushData(registerForm.value)"
   class="registerForm"
 >
+<div class="mb-3">
+  <label for="telephone" class="form-label">Phone number</label>
+  <input
+    formControlName="telephone"
+    type="tel"
+    name="telephone"
+    class="form-control"
+    id="telephone"
+    placeholder="Your phone..."
+  />
+</div>
   <passport-group formGroupName="passportData"></passport-group>
   <button type="submit" class="btn btn-primary">Register</button>
 </form>

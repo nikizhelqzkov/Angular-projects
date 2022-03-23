@@ -24,15 +24,16 @@ export class RegisterService {
       })
     );
   }
-  addRegister(data: any): Observable<IContact[]> {
+  addRegister(data: IContact): Observable<IContact[]> {
     const idList = this.DATA.map((data) => data.id);
     const id = idList.length === 0 ? 0 : Math.max(...idList) + 1;
-    const newData = data.passportData;
-    newData.id = id;
-    const result = {
+    const passportData = data.passportData;
+    const result:IContact = {
       id,
-      passportData: newData,
+      telephone:data.telephone,
+      passportData,
     };
+
     this.DATA.push(result);
     return this.getList();
   }

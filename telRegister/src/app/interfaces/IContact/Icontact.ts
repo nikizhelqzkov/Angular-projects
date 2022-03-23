@@ -3,7 +3,7 @@ import { IPassport } from "./IPassportData";
 
 export interface IContact{
   id:number;
-  telephone?:string;
+  telephone:string;
   passportData:IPassport;
   address?:IAddress;
 }
