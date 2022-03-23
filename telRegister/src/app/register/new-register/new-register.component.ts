@@ -13,14 +13,18 @@ export class NewRegisterComponent implements OnInit {
   public registerForm!:FormGroup;
   constructor(private route: Router, private regService: RegisterService,
    private fb:FormBuilder) {}
-
+   private tempDate = new Date();
    ngOnInit(): void {
      this.registerForm = this.fb.group({
        telephone:'',
        passportData:this.fb.group({
          firstName:'',
          lastName: '',
-         dateOfBirth:new Date(),
+         dateOfBirth:`${this.tempDate.getFullYear()}-${this.tempDate.getMonth()+1}-${this.tempDate.getDate()}`,
+       }),
+       address:this.fb.group({
+         country:'',
+         city:''
        })
      })
    }

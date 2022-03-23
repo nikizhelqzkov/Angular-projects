@@ -1,0 +1,25 @@
+<ng-container [formGroup]="address">
+  <h3>Address information</h3>
+  <div class="mb-3">
+    <label for="country" class="form-label">Country</label>
+    <input
+      formControlName="country"
+      type="text"
+      name="country"
+      class="form-control"
+      id="country"
+      placeholder="Your Country..."
+    />
+  </div>
+  <div class="mb-3">
+    <label for="city" class="form-label">City</label>
+    <input
+      formControlName="city"
+      type="text"
+      name="city"
+      class="form-control"
+      id="name"
+      placeholder="Your city..."
+    />
+  </div>
+</ng-container>

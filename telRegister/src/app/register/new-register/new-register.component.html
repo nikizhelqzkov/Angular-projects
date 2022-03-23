@@ -7,8 +7,9 @@
   (ngSubmit)="pushData(registerForm.value)"
   class="registerForm"
 >
+<h3>Phone Number information</h3>
 <div class="mb-3">
-  <label for="telephone" class="form-label">Phone number</label>
+  <label for="telephone" class="form-label">Number</label>
   <input
     formControlName="telephone"
     type="tel"
@@ -19,55 +20,7 @@
   />
 </div>
   <passport-group formGroupName="passportData"></passport-group>
+  <register-address formGroupName="address"></register-address>
   <button type="submit" class="btn btn-primary">Register</button>
 </form>
 
-<!-- <form
-  #registerNew="ngForm"
-  (ngSubmit)="pushData(registerNew.value)"
-  class="registerForm"
-> -->
-<!-- <div class="mb-3">
-    <label for="firstName" class="form-label">First Name</label>
-    <input
-      [(ngModel)]="passportData.firstName"
-      type="text"
-      name="firstName"
-      class="form-control"
-      id="firstName"
-      placeholder="Your first name..."
-    />
-  </div>
-  <div class="mb-3">
-    <label for="lastName" class="form-label">Last Name</label>
-    <input
-      [(ngModel)]="passportData.lastName"
-      type="text"
-      name="lastName"
-      class="form-control"
-      id="name"
-      placeholder="Your last name..."
-    />
-  </div>
-  <div class="mb-3">
-    <label for="tel" class="form-label">Telephone</label>
-    <input
-      [(ngModel)]="tel"
-      type="tel"
-      name="tel"
-      class="form-control"
-      id="tel"
-      placeholder="Your phone number..."
-    />
-  </div> -->
-<!-- <div class="mb-3">
-    <label for="age" class="form-label">Age</label>
-    <input
-      type="number"
-      [(ngModel)]="age"
-      name="age"
-      class="form-control"
-      id="age"
-      placeholder="Your age..."
-    />
-  </div> -->

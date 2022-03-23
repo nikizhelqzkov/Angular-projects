@@ -11,6 +11,7 @@ import { NewRegisterComponent } from './register/new-register/new-register.compo
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PassportGroupComponent } from './register/new-register/passport-group/passport-group.component';
+import { RegisterAddressComponent } from './register/new-register/register-address/register-address.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { PassportGroupComponent } from './register/new-register/passport-group/p
     HomeComponent,
     RegisterDetailsComponent,
     NewRegisterComponent,
-    PassportGroupComponent
+    PassportGroupComponent,
+    RegisterAddressComponent
   ],
   imports: [
     BrowserModule,

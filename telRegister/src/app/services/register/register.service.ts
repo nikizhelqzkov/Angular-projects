@@ -28,10 +28,13 @@ export class RegisterService {
     const idList = this.DATA.map((data) => data.id);
     const id = idList.length === 0 ? 0 : Math.max(...idList) + 1;
     const passportData = data.passportData;
+    const address = data.address;
+    debugger;
     const result:IContact = {
       id,
       telephone:data.telephone,
       passportData,
+      address
     };
 
     this.DATA.push(result);
