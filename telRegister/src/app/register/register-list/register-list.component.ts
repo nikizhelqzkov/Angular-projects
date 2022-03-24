@@ -39,7 +39,6 @@ export class RegisterListComponent implements OnInit {
       dateNow.getMonth() + 1,
       dateNow.getDate(),
     ];
-    console.log(yearNow, monthNow, dayNow);
     const [year, month, day] = [
       dateOfReg.getFullYear(),
       dateOfReg.getMonth() + 1,

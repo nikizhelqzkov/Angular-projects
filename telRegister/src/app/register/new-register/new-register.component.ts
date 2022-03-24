@@ -11,34 +11,21 @@ import { RegisterService } from 'src/app/services/register/register.service';
 })
 export class NewRegisterComponent implements OnInit {
   public registerForm!: FormGroup;
+  private patern: RegExp =
+    /^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/;
   constructor(
     private route: Router,
     private regService: RegisterService,
     private fb: FormBuilder
   ) {}
-  private tempDate = new Date();
 
   ngOnInit(): void {
     this.registerForm = this.fb.group({
-      telephone: [
-        '',
-        [
-          Validators.required,
-          Validators.pattern(
-            /^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/
-          ),
-        ],
-      ],
+      telephone: ['', [Validators.required, Validators.pattern(this.patern)]],
       passportData: this.fb.group({
         firstName: ['', [Validators.required]],
         lastName: ['', [Validators.required]],
-        dateOfBirth: [
-          // `${this.tempDate.getFullYear()}-${
-          //   this.tempDate.getMonth() + 1
-          // }-${this.tempDate.getDate()}`,
-          '',
-          [Validators.required],
-        ],
+        dateOfBirth: ['', [Validators.required]],
       }),
       address: this.fb.group({
         country: '',
@@ -49,9 +36,7 @@ export class NewRegisterComponent implements OnInit {
 
   // methods
   pushData(data: IContact): void {
-    console.log(data);
     this.regService.addRegister(data).subscribe((result) => {
-      console.log(result);
     });
     this.route.navigate(['register']);
   }
@@ -60,15 +45,14 @@ export class NewRegisterComponent implements OnInit {
     return (
       this.registerForm.get('telephone')?.errors &&
       (this.registerForm.get('telephone')?.touched ||
-        this.registerForm.get('telephone')?.dirty)
-        && !this.notValidTelReqired()
+        this.registerForm.get('telephone')?.dirty) &&
+      !this.notValidTelReqired()
     );
   }
   notValidTelReqired() {
     return (
       this.registerForm.get('telephone')?.touched &&
       this.registerForm.get('telephone')?.errors?.['required']
-
     );
   }
 }

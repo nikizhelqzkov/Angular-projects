@@ -21,6 +21,5 @@ export class RegisterDetailsComponent implements OnInit {
     this.regService.getDetail(id).subscribe(info=>{
       this.data = info;
     });
-    console.log(this.data)
   }
 }
