@@ -8,7 +8,7 @@
     <phone-details [phoneNumber]="data.telephone"></phone-details>
     <hr/>
     <passport-details [info]="data.passportData"></passport-details>
-    <hr/>
+    <hr *ngIf="data.address.country || data.address.city"/>
     <address-details [address]="data.address"></address-details>
   </div>
 </main>

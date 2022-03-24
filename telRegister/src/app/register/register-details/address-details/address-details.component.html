@@ -1,8 +1,8 @@
-<div class="d-flex justify-content-between align-items-center">
+<div *ngIf="address.country" class="d-flex justify-content-between align-items-center">
   <h4 class="title">Country</h4>
   <h4>{{ address.country }}</h4>
 </div>
-<div class="d-flex justify-content-between align-items-center">
+<div *ngIf="address.city" class="d-flex justify-content-between align-items-center">
   <h4 class="title text-justify">City</h4>
   <h4>{{ address.city }}</h4>
 </div>
