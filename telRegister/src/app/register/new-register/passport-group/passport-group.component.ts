@@ -16,4 +16,24 @@ export class PassportGroupComponent implements OnInit {
       this.formGroupName
     ) as FormGroup;
   }
+
+  //validators
+  notValidFirstName() {
+    return (
+      this.passportForm.get('firstName')?.touched &&
+      this.passportForm.get('firstName')?.errors?.['required']
+    );
+  }
+  notValidLastName() {
+    return (
+      this.passportForm.get('lastName')?.touched &&
+      this.passportForm.get('lastName')?.errors?.['required']
+    );
+  }
+  notValidDate() {
+    return (
+      this.passportForm.get('dateOfBirth')?.touched &&
+      this.passportForm.get('dateOfBirth')?.errors?.['required']
+    );
+  }
 }

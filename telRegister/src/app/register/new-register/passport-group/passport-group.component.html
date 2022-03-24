@@ -2,6 +2,8 @@
   <h3>Passport information</h3>
   <div class="mb-3">
     <label for="firstName" class="form-label">First Name</label>
+    <span class="errorText star">*</span>
+    <em class="errorText" *ngIf="notValidFirstName()">Required First Name</em>
     <input
       formControlName="firstName"
       type="text"
@@ -13,6 +15,8 @@
   </div>
   <div class="mb-3">
     <label for="lastName" class="form-label">Last Name</label>
+    <span class="errorText star" >*</span>
+    <em class="errorText" *ngIf="notValidLastName()">Required Last Name</em>
     <input
       formControlName="lastName"
       type="text"
@@ -23,7 +27,9 @@
     />
   </div>
   <div class="mb-3">
-    <label for="lastName" class="form-label">Date of Birth</label>
+    <label for="dateOfBirth" class="form-label">Date of Birth</label>
+    <span class="errorText star">*</span>
+    <em class="errorText" *ngIf="notValidDate()">Required Date of Birth</em>
     <input
       formControlName="dateOfBirth"
       type="date"
