@@ -6,14 +6,14 @@ import { RegisterDetailsComponent } from './register/register-details/register-d
 import { RegisterListComponent } from './register/register-list/register-list.component';
 
 const routes: Routes = [
-  {path:'',component:HomeComponent,pathMatch: 'full'},
-  {path:'register', component: RegisterListComponent},
-  {path:'register/add', component: NewRegisterComponent},
-  {path:'register/details/:id', component: RegisterDetailsComponent}
+  { path: '', component: HomeComponent, pathMatch: 'full' },
+  { path: 'register', component: RegisterListComponent },
+  { path: 'register/add', component: NewRegisterComponent },
+  { path: 'register/details/:id', component: RegisterDetailsComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

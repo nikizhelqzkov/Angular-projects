@@ -1,11 +1,8 @@
 import { Injectable } from '@angular/core';
 import { observable, Observable, of } from 'rxjs';
-import { IContact } from 'src/app/interfaces/IContact/Icontact';
+import { IContact } from 'src/app/interfaces/Contact/Icontact';
 
 @Injectable()
-// {
-//   providedIn: 'root'
-// }
 export class RegisterService {
   constructor() {}
   getList(): Observable<any> {

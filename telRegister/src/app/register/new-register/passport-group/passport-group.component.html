@@ -30,6 +30,7 @@
     <label for="dateOfBirth" class="form-label">Date of Birth</label>
     <span class="errorText star">*</span>
     <em class="errorText" *ngIf="notValidPassportForm('dateOfBirth')">Required Date of Birth</em>
+    <em class="errorText" *ngIf="notValidDate('dateOfBirth')">{{dateErr}}</em>
     <input
       formControlName="dateOfBirth"
       type="date"

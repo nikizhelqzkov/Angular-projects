@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Route, Router } from '@angular/router';
-import { IContact } from 'src/app/interfaces/IContact/Icontact';
+import { IContact } from 'src/app/interfaces/Contact/Icontact';
 import { RegisterService } from '../../services/register/register.service';
 
 @Component({
