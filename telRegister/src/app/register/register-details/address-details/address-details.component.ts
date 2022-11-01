@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { IAddress } from 'src/app/interfaces/IContact/IAddress';
+import { IAddress } from 'src/app/interfaces/Contact/IAddress';
 
 @Component({
   selector: 'address-details',

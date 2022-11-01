@@ -9,6 +9,7 @@ import { FormGroup, FormGroupDirective } from '@angular/forms';
 export class PassportGroupComponent implements OnInit {
   @Input() formGroupName!: string;
   public passportForm!: FormGroup;
+  public dateErr:string = ''
   constructor(private rootFormGroup: FormGroupDirective) {}
 
   ngOnInit(): void {
@@ -24,5 +25,11 @@ export class PassportGroupComponent implements OnInit {
       this.passportForm.get(prop)?.errors?.['required']
     );
   }
-
+  notValidDate(prop:string) {
+    this.dateErr = this.passportForm.get(prop)?.errors?.['invalidDate']
+    return (
+      this.passportForm.get(prop)?.touched &&
+      this.passportForm.get(prop)?.errors?.['invalidDate']
+    );
+  }
 }

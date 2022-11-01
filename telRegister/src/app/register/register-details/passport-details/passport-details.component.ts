@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { IPassport } from 'src/app/interfaces/IContact/IPassportData';
+import { IPassport } from 'src/app/interfaces/Contact/IPassportData';
 
 @Component({
   selector: 'passport-details',
