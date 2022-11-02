@@ -1,9 +1,9 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { User } from '../domain-model/models/User';
-import { UserResponse } from '../domain-model/Responses/UserInfo';
-import { AuthService } from '../services/auth.service';
+import { User } from '../../domain-model/models/User';
+import { UserResponse } from '../../domain-model/Responses/UserInfo';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-user-info',
@@ -28,7 +28,7 @@ export class UserInfoComponent implements OnInit {
         console.log(error);
         if (error.status === 401) {
           alert('Your session has expired. Please login again.');
-          this.router.navigate(['/login']);
+          this.router.navigate(['/login','user-info']);
         }
       }
     );

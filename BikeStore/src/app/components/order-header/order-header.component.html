@@ -1,0 +1,6 @@
+<div class="container-fluid" *ngIf="user!=null">
+  <header>
+    <h2 class="text-center">Orders for {{user.userInfo.firstName}} {{user.userInfo.lastName}}</h2>
+  </header>
+  <list-orders [user]=user></list-orders>
+</div>

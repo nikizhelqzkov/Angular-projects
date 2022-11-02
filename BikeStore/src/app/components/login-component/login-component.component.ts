@@ -1,9 +1,9 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
-import { UserLoginRequest } from '../domain-model/Requests/UserRequest';
-import { AuthService } from '../services/auth.service';
+import { UserLoginRequest } from '../../domain-model/Requests/UserRequest';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login-component',
@@ -12,15 +12,24 @@ import { AuthService } from '../services/auth.service';
 })
 export class LoginComponentComponent implements OnInit {
   public user: UserLoginRequest = new UserLoginRequest();
-  constructor(private _authService: AuthService, private router: Router) {}
+  constructor(
+    private _authService: AuthService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
   public error: string = '';
-  ngOnInit(): void {}
+  public lastUrl!: string;
+  ngOnInit(): void {
+    this.route.paramMap.subscribe((params) => {
+      this.lastUrl = params.get('lastUrl')!;
+    });
+  }
   public login() {
     console.log(this.user);
     this._authService.login(this.user).subscribe(
       (token: string) => {
         localStorage.setItem('authToken', token);
-        this.router.navigate(['/user-info']);
+        this.router.navigate([`/${this.lastUrl}`]);
       },
       (error: HttpErrorResponse) => {
         console.log(error);

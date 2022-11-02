@@ -1,9 +1,9 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { UserRegisterRequest } from '../domain-model/Requests/UserRegisterRequest';
-import { UserRegisterResponse } from '../domain-model/Responses/UserRegisterResponse';
-import { AuthService } from '../services/auth.service';
+import { UserRegisterRequest } from '../../domain-model/Requests/UserRegisterRequest';
+import { UserRegisterResponse } from '../../domain-model/Responses/UserRegisterResponse';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-register-component',

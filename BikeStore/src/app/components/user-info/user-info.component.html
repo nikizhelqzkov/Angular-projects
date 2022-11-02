@@ -1,5 +1,7 @@
-<div *ngIf="data!=null" class="user-container">
-  <h2>Information for {{data.userInfo.firstName}} {{data.userInfo.lastName}}</h2>
+
+
+<div *ngIf="data!=null" class="user-container container-fluid">
+  <h2 class="text-center">Information for {{data.userInfo.firstName}} {{data.userInfo.lastName}}</h2>
   <ul>
     <li>Username: {{data.user.username}}</li>
     <li>Email: {{data.userInfo.email}}</li>
