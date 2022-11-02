@@ -1,1 +1,46 @@
-<p>register-component works!</p>
+<div class="register-container">
+  <!-- <span class="errorText" *ngIf="error!=''">{{error}}</span> -->
+  <span class="errorText" *ngIf="validateError!=''">{{validateError}}</span>
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input type="text" class="form-control" id="username" placeholder="Enter username" [(ngModel)]="user.Username">
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" class="form-control" id="password" placeholder="Password"  [(ngModel)]="user.Password">
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="text" class="form-control" id="email" placeholder="Enter email" [(ngModel)]="user.Email">
+    </div>
+    <div class="form-group">
+      <label for="fName">First Name</label>
+      <input type="text" class="form-control" id="fName" placeholder="Enter First Name" [(ngModel)]="user.FirstName">
+    </div>
+    <div class="form-group">
+      <label for="lName">Last Name</label>
+      <input type="text" class="form-control" id="lName" placeholder="Enter Last Name" [(ngModel)]="user.LastName">
+    </div>
+    <div class="form-group">
+      <label for="phone">Phone number</label>
+      <input type="tel" class="form-control" id="phone" placeholder="+359 89..." [(ngModel)]="user.Phone">
+    </div>
+    <div class="form-group">
+      <label for="street">Street</label>
+      <input type="text" class="form-control" id="street" placeholder="Example str." [(ngModel)]="user.Street">
+    </div>
+    <div class="form-group">
+      <label for="city">City</label>
+      <input type="text" class="form-control" id="city" placeholder="Your city" [(ngModel)]="user.City">
+    </div>
+    <div class="form-group">
+      <label for="state">State</label>
+      <input type="text" class="form-control" id="state" placeholder="Your state" [(ngModel)]="user.State">
+    </div>
+    <div class="form-group">
+      <label for="zip">Zip code</label>
+      <input type="number" class="form-control" id="zip" placeholder="1000 (your zip code)" [(ngModel)]="user.ZipCode">
+    </div>
+    <button type="button" class="btn btn-primary mt-3" (click)="register()">Register</button>
+</div>
+

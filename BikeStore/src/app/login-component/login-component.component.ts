@@ -2,7 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { UserRequest } from '../domain-model/Requests/UserRequest';
+import { UserLoginRequest } from '../domain-model/Requests/UserRequest';
 import { AuthService } from '../services/auth.service';
 
 @Component({
@@ -11,23 +11,25 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./login-component.component.scss'],
 })
 export class LoginComponentComponent implements OnInit {
-  public user: UserRequest = new UserRequest();
-  constructor(private _authService: AuthService, private router:Router) {}
-  public error:string = '';
+  public user: UserLoginRequest = new UserLoginRequest();
+  constructor(private _authService: AuthService, private router: Router) {}
+  public error: string = '';
   ngOnInit(): void {}
-  login() {
+  public login() {
     console.log(this.user);
-    this._authService.login(this.user).subscribe((token:string) => {
-      localStorage.setItem('authToken', token);
-      this.router.navigate(['/user-info']);
-    },(error:HttpErrorResponse) => {
-      console.log(error);
-      this.error = error.error;
-    });
-
+    this._authService.login(this.user).subscribe(
+      (token: string) => {
+        localStorage.setItem('authToken', token);
+        this.router.navigate(['/user-info']);
+      },
+      (error: HttpErrorResponse) => {
+        console.log(error);
+        this.error = error.error;
+      }
+    );
   }
 
-  isFullLogin(){
-    return this.user.username!= '' && this.user.password != '';
+  isFullLogin() {
+    return this.user.username != '' && this.user.password != '';
   }
 }

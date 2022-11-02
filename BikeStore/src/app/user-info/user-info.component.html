@@ -1,1 +1,14 @@
-<p>user-info works!</p>
+<div *ngIf="data!=null" class="user-container">
+  <h2>Information for {{data.userInfo.firstName}} {{data.userInfo.lastName}}</h2>
+  <ul>
+    <li>Username: {{data.user.username}}</li>
+    <li>Email: {{data.userInfo.email}}</li>
+    <li *ngIf="data.userInfo.phone!=''">Phone: {{data.userInfo.phone}}</li>
+    <hr />
+    <li *ngIf="(data.userInfo.street !='' ||
+      data.userInfo.city !='' ||
+      data.userInfo.state !='' ||
+      data.userInfo.zipCode !='')">Address: {{data.userInfo.state}}, {{data.userInfo.city}}, {{data.userInfo.street}},
+      {{data.userInfo.zipCode}}</li>
+  </ul>
+</div>
