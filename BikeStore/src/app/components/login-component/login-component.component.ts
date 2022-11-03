@@ -18,10 +18,16 @@ export class LoginComponentComponent implements OnInit {
     private route: ActivatedRoute
   ) {}
   public error: string = '';
-  public lastUrl!: string;
+  public lastUrl: string = 'user-info';
   ngOnInit(): void {
     this.route.paramMap.subscribe((params) => {
-      this.lastUrl = params.get('lastUrl')!;
+      this.lastUrl = params.get('lastUrl') || 'user-info';
+    },
+    (error: HttpErrorResponse) => {
+      console.log("Just heare",error);
+      // this.error = error.error;
+
+      this.lastUrl = 'user-info';
     });
   }
   public login() {
