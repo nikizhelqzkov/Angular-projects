@@ -14,6 +14,7 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { HomeComponent } from './components/home/home.component';
 import { ListOrdersComponent } from './components/list-orders/list-orders.component';
 import { OrderHeaderComponent } from './components/order-header/order-header.component';
+import { OrderItemsComponent } from './components/order-items/order-items.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { OrderHeaderComponent } from './components/order-header/order-header.com
     NavigationComponent,
     HomeComponent,
     ListOrdersComponent,
-    OrderHeaderComponent
+    OrderHeaderComponent,
+    OrderItemsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,11 @@
+<h2 class="text-center">Order items</h2>
+<h3 *ngIf="orderItems.length==0">No order items</h3>
+<main class="container-fluid items-container" *ngIf="orderItems.length>0">
+ <ul *ngFor="let item of orderItems" class="list-items">
+    <li *ngIf="item.productName">Product {{item.productName}}</li>
+    <li *ngIf="item.listPrice">Price {{item.listPrice}}</li>
+    <li *ngIf="item.quantity">Quantity {{item.quantity}}</li>
+    <li *ngIf="item.discount" class="discount">Discount {{item.discount*100}}%</li>
+ </ul>
+</main>
+

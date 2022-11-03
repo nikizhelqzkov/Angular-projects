@@ -1,5 +1,19 @@
-
-<main *ngIf="data">
+<main *ngIf="data" class="container-fluid order-container">
   <h3 *ngIf="data.length==0">No orders</h3>
-</main>
+  <ul *ngFor="let order of data" class="list-orders">
+    <li *ngIf="order.orderDate">
+      Ordered date: {{order.orderDate | date:'shortDate'}}
+    </li>
+    <li *ngIf="order.requiredDate">
+      Required date: {{order.requiredDate | date:'shortDate'}}
+    </li>
+    <li *ngIf="order.shippedDate">
+      Shipped date: {{order.shippedDate | date:'shortDate'}}
+    </li>
+    <li *ngIf="order.storeName">
+      Store name: {{order.storeName}}
+    </li>
+    <button *ngIf="order.orderItems.length > 0" (click)="goToOrderItems(order.id)">Order items</button>
+  </ul>
 
+</main>

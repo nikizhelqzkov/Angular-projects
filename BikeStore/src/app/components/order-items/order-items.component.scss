@@ -1,0 +1,20 @@
+.items-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  flex-basis:25%;
+  margin-top: 40px;
+    .list-items {
+      border: 3px groove #616161;
+      // margin-bottom: 20px;
+      padding: 30px;
+      padding-bottom: 20px;
+      width: 400px;
+
+      .discount{
+        color: red;
+        font-weight: bold;
+      }
+    }
+
+  }

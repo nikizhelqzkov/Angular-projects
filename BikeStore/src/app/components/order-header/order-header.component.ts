@@ -1,6 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Order } from 'src/app/domain-model/models/Order';
 import { UserResponse } from 'src/app/domain-model/Responses/UserInfo';
 import { AuthService } from 'src/app/services/auth.service';
 import { OrdersService } from 'src/app/services/orders.service';
@@ -12,7 +13,7 @@ import { OrdersService } from 'src/app/services/orders.service';
 })
 export class OrderHeaderComponent implements OnInit {
   public user!: UserResponse;
-  public orders!: any;
+  public orders: Order[] = [];
   constructor(
     private router: Router,
     private _authService: AuthService,
@@ -38,13 +39,18 @@ export class OrderHeaderComponent implements OnInit {
     );
   }
   loadOrdersPerUser(): void {
-
     if (this.user.user.customerId == 0) {
       return;
     }
-    this._orderService.getOrders(this.user.user.customerId).subscribe((res) => {
-      console.log(res);
-      this.orders = res;
-    });
+    this._orderService
+      .getOrders(this.user.user.customerId)
+      .subscribe((orders: Order[]) => {
+        console.log(orders);
+        for (const order of orders) {
+          if(this.orders.find(x=>x.id == order.id) == undefined){
+            this.orders.push(order);
+          }
+        }
+      });
   }
 }

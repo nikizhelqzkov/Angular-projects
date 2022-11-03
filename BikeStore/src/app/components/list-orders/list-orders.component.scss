@@ -1,0 +1,31 @@
+.order-container {
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+flex-basis:25%;
+margin-top: 40px;
+  .list-orders {
+    border: 3px groove #616161;
+    // margin-bottom: 20px;
+    padding: 30px;
+    padding-bottom: 20px;
+    width: 300px;
+    button{
+      margin: 0 auto;
+      margin-top: 20px;
+      display: block;
+      outline: 0;
+      border: 0;
+      background-color: #08eb57;
+      padding: 10px;
+      border-radius: 5px;
+      color: #080808;
+
+      &:hover{
+        background-color: #3b73d4;
+        color: #fbfafa;
+      }
+    }
+  }
+
+}
